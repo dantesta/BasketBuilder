@@ -38,7 +38,7 @@ class Search extends Component {
   render() {
     return (
       <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center">Search By Breed!</h1>
+        <h1 className="text-center">Sign In!</h1>
         <Alert
           type="danger"
           style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
