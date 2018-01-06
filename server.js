@@ -23,8 +23,8 @@ mongoose.connect(
   }
 );
 
-var passport = require('passport');
-var expressSession = require('express-session');
+const passport = require('passport');
+const expressSession = require('express-session');
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
 app.use(passport.session());
