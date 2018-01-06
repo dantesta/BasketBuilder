@@ -10,3 +10,17 @@ div[data-reactroot] {
   padding: 0;
   margin: 0;
 }
+body{
+       background-image: url("https://lyquynhblog.files.wordpress.com/2016/03/1-straw_texture1904.jpg");
+}
+h1{
+       color:cornflowerblue;
+       text-align: center;
+}
+p{
+       color: cornflowerblue;
+}
+.footer span{
+       text-align: center;
+       background:#e6db53;
+       color:cornflowerblue;
