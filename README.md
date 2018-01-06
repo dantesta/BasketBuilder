@@ -1,4 +1,4 @@
-# FinalProject
+# Final Project
 
 Adrian Sirko, Dan Testa, Mike Troutman
 
