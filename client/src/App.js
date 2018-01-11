@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import "antd/dist/antd.css"
 
 const App = () =>
   <Router>

@@ -1,45 +1,82 @@
-import React from "react";
-import Hero from "../components/Hero";
-import Container from "../components/Container";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom'
+import { Layout, Form, Icon, Input, Button } from 'antd';
+import API from '../utils/API';
+const {Content} = Layout;
+const FormItem = Form.Item;
 
-const Login = () =>
-  <div className="container">
-  <div className="row">
-    <div className="col-sm-6 col-md-4 col-md-offset-4">
-      <h1 className="text-center login-title">Sign in 
-        <div className="account-wall"><img className="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"/>
-          <form className="form-signin" action="/login" method="POST">
-            <input className="form-control" type="text" name="username" placeholder="Email" required="required" autofocus="autofocus"/>
-            <input className="form-control" type="password" name="password" placeholder="Password" required="required"/>
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><span className="clearfix"></span>
-          </form>
-        </div><a className="text-center new-account" href="/signup">Create an account</a>
-      </h1>
-    </div>
-  </div>
+class Login extends Component {
+  constructor(props) {
+    super()
+  }
+  state = {
+    username: '',
+    password: '',
+    loggedIn: false
+  };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
+  handleFormSubmit = event => {
+    event.preventDefault();
 
-  <div className="row">
-    <div className="col-sm-6 col-md-4 col-md-offset-4">
-      <h1 className="text-center login-title">Registration Details
-        <div className="signup-wall">
-          <form className="form-signin" action="/signup" method="POST">
-            <input className="form-control" type="text" name="username" placeholder="Username" required="required" autofocus="autofocus"/>
-            <input className="form-control" type="password" name="password" placeholder="Password" required="required"/>
-            <input className="form-control" type="email" name="email" placeholder="Email" required="required"/>
-            <input className="form-control" type="text" name="firstName" placeholder="First Name" required="required"/>
-            <input className="form-control" type="text" name="lastName" placeholder="Last Name" required="required"/>
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button><span className="clearfix"></span>
-          </form>
-        </div>
-        <div id="message">
-        </div>
-      </h1>
-    </div>
-  </div>
-</div>  
+    API.login({ username: this.state.username, password: this.state.password })
+      .then(res => {
+        console.log(res);
+        this.setState({
+          username: '',
+          password: '',
+          loggedIn: true
+        })
+      
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  render() {
+
+    if (this.state.loggedIn) {
+      return (
+          <Redirect to="/Discover"/>
+        )
+    }
+
+    return (
+      <Content style={{ margin: '0 16px' }}>
+        <Form className="login-form">
+          <FormItem>
+            <Input
+              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              placeholder="Username"
+              name="username"
+              onChange={this.handleInputChange}
+              value={this.state.username}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              type="password"
+              name="password"
+              value={this.state.password}
+              placeholder="Password"
+              onChange={this.handleInputChange}
+            />
+          </FormItem>
+          <FormItem>
+            <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
+              Log in
+            </Button>
+          </FormItem>
+        </Form>
+      </Content>
+    );
+  }
+}
 
 export default Login;

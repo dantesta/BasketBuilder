@@ -9,13 +9,5 @@ const articleSchema = new Schema({
 
 const Articles = mongoose.model("Articles", articleSchema);
 
-module.exports = mongoose.model('User',{
-	id: String,
-	username: String,
-	password: String,
-	email: String,
-	firstName: String,
-	lastName: String
-});
 
 module.exports = Articles;
