@@ -5,14 +5,14 @@ import API from '../utils/API';
 const {Content} = Layout;
 const FormItem = Form.Item;
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super()
   }
   state = {
     username: '',
     password: '',
-    loggedIn: false
+    registered: false
   };
 
   handleInputChange = event => {
@@ -22,14 +22,14 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
-    API.login({ username: this.state.username, password: this.state.password })
+    console.log(this.state.username,this.state.password)
+    API.register({ username: this.state.username, password: this.state.password })
       .then(res => {
         console.log(res);
         this.setState({
           username: '',
           password: '',
-          loggedIn: true
+          registered: true
         })
       
       })
@@ -40,9 +40,9 @@ class Login extends Component {
 
   render() {
 
-    if (this.state.loggedIn) {
+    if (this.state.registered) {
       return (
-          <Redirect to="/About"/>
+          <Redirect to="/login"/>
         )
     }
 
@@ -79,4 +79,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
