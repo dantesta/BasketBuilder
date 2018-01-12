@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Discover from "./pages/Discover";
+import Build from "./pages/Build";
 import About from "./pages/About";
-import Search from "./pages/Search";
 import Login from "./pages/Login";
+import Register from './pages/Register'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -16,9 +16,9 @@ const App = () =>
       <Wrapper>
         <Route exact path="/" component={About} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/discover" component={Discover} />
-        <Route exact path="/search" component={Search} />
+        <Route exact path="/build" component={Build} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </Wrapper>
       <Footer />
     </div>
