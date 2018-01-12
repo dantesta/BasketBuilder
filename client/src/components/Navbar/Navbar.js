@@ -23,9 +23,8 @@ const Navbar = props =>
           <Link to="/">About</Link>
         </li>
 
-        <li
-          className={window.location.pathname === "/discover" ? "active" : ""}>
-          <Link to="/discover">Create</Link>
+        <li className={window.location.pathname === "/build" ? "active" : ""}>
+          <Link to="/build">Build</Link>
         </li>
 
 
@@ -33,7 +32,9 @@ const Navbar = props =>
           <Link to="/login">Login</Link>
         </li>
 
-         <li className={window.location.pathname === "/register" ? "active" : ""}>
+
+        <li className={window.location.pathname === "/register" ? "active" : ""}>
+
           <Link to="/register">Register</Link>
         </li>
 

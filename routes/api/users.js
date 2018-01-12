@@ -4,7 +4,7 @@ const usersController = require('../../controllers/usersController');
 
 // Matches with "/api/user"
 router
-  .route('/login')
+  .route('/users/login')
   .post(passport.authenticate('local'), function(req, res) {
     
     console.log(req.user);
@@ -20,7 +20,7 @@ router
   });
 
 router
-  .route('/logout')
+  .route('/users/logout')
   .get(function(req,res) {
     req.logout()
 
@@ -29,11 +29,11 @@ router
 
 // Matches with "/api/user/:id"
 router
-  .route('/:id')
+  .route('/users/:id')
   .get(usersController.findById)
   .put(usersController.update)
   .delete(usersController.remove);
 
-router.route('/register').post(usersController.register);
+router.route('/users/register').post(usersController.register);
 
 module.exports = router;
