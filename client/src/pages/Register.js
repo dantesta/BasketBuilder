@@ -69,8 +69,8 @@ class Register extends Component {
             />
           </FormItem>
           <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
-              Log in
+            <Button type="success" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
+              Register
             </Button>
           </FormItem>
         </Form>
