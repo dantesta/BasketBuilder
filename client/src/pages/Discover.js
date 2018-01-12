@@ -13,6 +13,11 @@ class Discover extends Component {
       {name: 'basket2', img: basketImg2},
       {name: 'basket3', img: basketImg3}
     ],
+    items: [
+
+    ]
+
+    
     pickedBasket: {},
     isBasketPicked: false
   };
