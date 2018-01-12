@@ -8,6 +8,7 @@ const Card = props =>
     style={{
       backgroundImage: props.image ? `url(${props.image})` : "none"
     }}
+    onClick={() => props.onClick(props.image)}
   >
     {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
     
