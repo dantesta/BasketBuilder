@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 import basketImg1 from './images/basketImg1.jpg'
 import basketImg2 from './images/basketImg2.jpg'
 import basketImg3 from './images/basketImg3.jpg'
@@ -99,7 +100,9 @@ class Build extends Component {
           </div>
 
           <div className="col-md-6 text-center">
+
             <h1 className=" text-center">Your Cart</h1>
+
 
             {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img}/> : (<h4>Your cart is empty</h4>)}
 
@@ -109,11 +112,23 @@ class Build extends Component {
                 <Card image={item.img} onClick={this.removeItem} />
                 )}
               </div>)
-             : (<p>Your basket is currently empty <button type="button" className="btn btn-primary">Checkout</button></p>)} 
+             : (<p>Your basket is currently empty</p>)} 
           </div>
 
+
+
+
+
+        <button type="button" className={window.location.pathname === "/checkout" ? "active" : ""}>
+          <Link to="/checkout">Checkout</Link>
+        </button>
+
+
+
         </div>
+
       </div>
+
     );
   }
 }
