@@ -20,13 +20,13 @@ const Home = () =>
       <Row>
         <Col size="md-12">
           <p>
-            Create a new basket
+            Create a new basket (Build Route Link)
           </p>
           <p>
-            Purchase Existing Basket
+            Learn More (About Route Link)
           </p>
           <p>
-           Learn More
+           Login (Login Route Link)
           </p>
         </Col>
       </Row>
