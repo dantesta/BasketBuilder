@@ -12,15 +12,10 @@ const Navbar = props =>
         </Link>
       </div>
       <ul className="nav navbar-nav">
+
         <li
-          className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/about"
-              ? "active"
-              : ""
-          }
-        >
-          <Link to="/">About</Link>
+          className={window.location.pathname === "/about" ? "active" : ""}>
+          <Link to="/about">About</Link>
         </li>
 
         <li

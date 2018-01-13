@@ -14,5 +14,8 @@ export default {
   },
   register: function(creds) {
     return axios.post('/api/users/register',creds)
+  },
+  checkout: function(creds) {
+    return axios.post('/api/users/checkout')
   }
 }

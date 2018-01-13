@@ -4,11 +4,10 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 
-
-const About = () =>
+const Checkout = () =>
   <div>
     <Hero backgroundImage="http://www.jillstable.ca/wp-content/uploads/gift-banner.jpg">
-      <h1>About</h1>
+      <h1>Basket Builder</h1>
       <h2>Gift Baskets & More!</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
@@ -26,12 +25,11 @@ const About = () =>
             Purchase Existing Basket
           </p>
           <p>
-           Learn More
+            Sign-in
           </p>
         </Col>
       </Row>
     </Container>
-
   </div>;
 
-export default About;
+export default Checkout;

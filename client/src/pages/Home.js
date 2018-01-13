@@ -5,10 +5,10 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 
 
-const About = () =>
+const Home = () =>
   <div>
     <Hero backgroundImage="http://www.jillstable.ca/wp-content/uploads/gift-banner.jpg">
-      <h1>About</h1>
+      <h1>Basket Builder</h1>
       <h2>Gift Baskets & More!</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
@@ -34,4 +34,4 @@ const About = () =>
 
   </div>;
 
-export default About;
+export default Home;

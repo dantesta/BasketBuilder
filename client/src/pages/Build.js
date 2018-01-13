@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 import Card from "../components/Card";
-import Alert from "../components/Alert";
 import basketImg1 from './images/basketImg1.jpg'
 import basketImg2 from './images/basketImg2.jpg'
 import basketImg3 from './images/basketImg3.jpg'
@@ -83,7 +81,7 @@ class Build extends Component {
           <div className="col-md-6 text-center">
             <div className="row">
               <div className="col-md-12">
-                <h1 className="text-center">select container</h1>
+                <h1 className="text-center">Select Container</h1>
                 {this.state.baskets.map(basket => 
                     <Card image={basket.img} onClick={this.basketClick}/>
                   )}
@@ -91,7 +89,7 @@ class Build extends Component {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <h1 className=" text-center">select container</h1>
+                <h1 className=" text-center">Select Item</h1>
                 {this.state.items.map(item => 
                     <Card image={item.img} onClick={this.itemClick}/>
                   )
