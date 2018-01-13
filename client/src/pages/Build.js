@@ -100,6 +100,7 @@ class Build extends Component {
 
           <div className="col-md-6 text-center">
             <h1 className=" text-center">Your Cart</h1>
+
             {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img}/> : (<h4>Your cart is empty</h4>)}
 
             {this.state.isItemPicked ? (
@@ -108,8 +109,9 @@ class Build extends Component {
                 <Card image={item.img} onClick={this.removeItem} />
                 )}
               </div>)
-             : (<p>Your basket is currently empty</p>)} 
+             : (<p>Your basket is currently empty <button type="button" className="btn btn-primary">Checkout</button></p>)} 
           </div>
+
         </div>
       </div>
     );
