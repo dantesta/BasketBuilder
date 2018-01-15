@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 import Card from "../components/Card";
-import Alert from "../components/Alert";
+import { Link } from "react-router-dom";
 import basketImg1 from './images/basketImg1.jpg'
 import basketImg2 from './images/basketImg2.jpg'
 import basketImg3 from './images/basketImg3.jpg'
@@ -83,7 +82,7 @@ class Build extends Component {
           <div className="col-md-6 text-center">
             <div className="row">
               <div className="col-md-12">
-                <h1 className="text-center">select container</h1>
+                <h1 className="text-center">Select Container</h1>
                 {this.state.baskets.map(basket => 
                     <Card image={basket.img} onClick={this.basketClick}/>
                   )}
@@ -91,7 +90,7 @@ class Build extends Component {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <h1 className=" text-center">select container</h1>
+                <h1 className=" text-center">Select Item</h1>
                 {this.state.items.map(item => 
                     <Card image={item.img} onClick={this.itemClick}/>
                   )
@@ -101,7 +100,10 @@ class Build extends Component {
           </div>
 
           <div className="col-md-6 text-center">
+
             <h1 className=" text-center">Your Cart</h1>
+
+
             {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img}/> : (<h4>Your cart is empty</h4>)}
 
             {this.state.isItemPicked ? (
@@ -112,8 +114,21 @@ class Build extends Component {
               </div>)
              : (<p>Your basket is currently empty</p>)} 
           </div>
+
+
+
+
+
+        <button type="button" className={window.location.pathname === "/checkout" ? "active" : ""}>
+          <Link to="/checkout">Checkout</Link>
+        </button>
+
+
+
         </div>
+
       </div>
+
     );
   }
 }

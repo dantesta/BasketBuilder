@@ -48,7 +48,7 @@ class Register extends Component {
 
     return (
       <Content style={{ margin: '0 16px' }}>
-        <Form className="login-form">
+        <Form className="login-form  col-md-6">
           <FormItem>
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
