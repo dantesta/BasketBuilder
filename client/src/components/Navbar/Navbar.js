@@ -46,13 +46,8 @@ class Navbar extends Component {
             <Link to="/build">Build</Link>
           </li>
 
-          {this.state.isLoggedIn ? (
-            <li className={window.location.pathname === "/logout" ? "active" : ""}>
-            Logout
-          </li>
-          ) : ( 
-          {this.state.isLoggedIn ! (
-          <span><li className={window.location.pathname === "/login" ? "active" : ""}>
+          
+          <li className={window.location.pathname === "/login" ? "active" : ""}>
             <Link to="/login">Login</Link>
           </li>
 
@@ -61,7 +56,7 @@ class Navbar extends Component {
 
             <Link to="/register">Register</Link>
           </li>
-          </span>
+         
 )}
          
 
