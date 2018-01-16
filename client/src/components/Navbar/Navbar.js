@@ -16,8 +16,10 @@ class Navbar extends Component {
       .then(res => {
         if (res) {
           this.setState({
-            isLoggedIn: true
+            isLoggedIn: false
+            
           })
+          console.log(res.data)
         }
       })
       .catch(err => console.log(err))
@@ -32,7 +34,9 @@ class Navbar extends Component {
         if (res.data === false) {
           this.setState({
             username: ''
+
           });
+          console.log(res.data)
         }
       })
       .catch(err => {
