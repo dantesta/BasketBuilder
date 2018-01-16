@@ -1,15 +1,17 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+
 import API from '../../utils/API';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 class Navbar extends Component {
-   state = {
+  state = {
     isLoggedIn: false
-   }
+  };
 
-   componentDidMount() {
+  componentDidMount() {
     API.loginCheck()
       .then(res => {
         if (res) {
@@ -19,7 +21,24 @@ class Navbar extends Component {
         }
       })
       .catch(err => console.log(err))
-   }
+
+    
+  };
+
+  userLogout = () => {
+    console.log('logout')
+    API.logout()
+      .then(res => {
+        if (res.data === false) {
+          this.setState({
+            username: ''
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   render() {
 
     return (
@@ -40,6 +59,7 @@ class Navbar extends Component {
             }
           >
             <Link to="/">About</Link>
+
           </li>
 
           <li className={window.location.pathname === "/build" ? "active" : ""}>
@@ -48,21 +68,26 @@ class Navbar extends Component {
 
           {this.state.isLoggedIn ? (
             <li className={window.location.pathname === "/logout" ? "active" : ""}>
-            Logout
-          </li>
-          ) : ( 
-          {this.state.isLoggedIn ! (
-          <span><li className={window.location.pathname === "/login" ? "active" : ""}>
-            <Link to="/login">Login</Link>
-          </li>
+              <Link to="/login">Logout</Link>
+            </li>
+
+          ) : (
+            
+          
+          
+            <span><li className={window.location.pathname === "/login" ? "active" : ""}>
+              <Link to="/login">Login</Link>
+            </li>
 
 
-          <li className={window.location.pathname === "/register" ? "active" : ""}>
+            <li className={window.location.pathname === "/register" ? "active" : ""}>
+              <Link to="/register">Register</Link>
+            </li>
+            </span>
 
-            <Link to="/register">Register</Link>
-          </li>
-          </span>
-)}
+          )
+
+  }
          
 
         </ul>
