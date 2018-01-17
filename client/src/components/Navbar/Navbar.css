@@ -1,3 +1,14 @@
 nav.navbar.navbar-default {
   margin-bottom: 0;
+background: #689497;
+
+}
+a.navbar-brand{
+	color:#C35E2A;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+a{
+	color:#C35E2A;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }

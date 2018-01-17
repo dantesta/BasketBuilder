@@ -23,7 +23,8 @@
 }
 
 .hero h1, .hero h2 {
-  color: white;
+  color: #C35E2A;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 .hero h1 {

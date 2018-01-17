@@ -13,6 +13,7 @@ import itemImg5 from './images/itemImg5.jpg'
 import itemImg6 from './images/itemImg6.jpg'
 import itemImg7 from './images/itemImg7.jpg'
 import itemImg8 from './images/itemImg8.jpg'
+
 class Build extends Component {
   state = {
     baskets: [
@@ -80,6 +81,8 @@ class Build extends Component {
 
 
   render() {
+    console.log(itemImg8)
+    console.log('hi')
     return (
       <div className="container">
         <div className="row">
