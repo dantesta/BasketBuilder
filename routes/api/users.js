@@ -11,7 +11,7 @@ router
     res.json(req.user);
   })
   .get(function(req, res) {
-    console.log(req.user);
+    console.log('hi', req.user);
     if (req.user) {
       res.json({username: req.user.username});
     } else {

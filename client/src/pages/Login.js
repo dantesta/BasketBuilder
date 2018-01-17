@@ -42,7 +42,7 @@ class Login extends Component {
 
     if (this.state.loggedIn) {
       return (
-          <Redirect to="/Home"/>
+          <Redirect to="/Build"/>
         )
     }
 
@@ -72,7 +72,14 @@ class Login extends Component {
             <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
               Log in
             </Button>
+
+            <Button type="warning" htmlType="submit" className="logout-form-button" onClick={this.handleFormSubmit}>
+              Log Out
+            </Button>
           </FormItem>
+          
+            
+          
         </Form>
       </Content>
     );
