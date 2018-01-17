@@ -48,6 +48,11 @@ class Register extends Component {
 
     return (
       <Content style={{ margin: '0 16px' }}>
+      <div>
+          <h3>
+            Register
+          </h3>
+      </div>
         <Form className="login-form  col-md-6">
           <FormItem>
             <Input
@@ -70,7 +75,7 @@ class Register extends Component {
           </FormItem>
           <FormItem>
             <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
-              Log in
+              Register
             </Button>
           </FormItem>
         </Form>

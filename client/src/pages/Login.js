@@ -26,6 +26,7 @@ class Login extends Component {
     API.login({ username: this.state.username, password: this.state.password })
       .then(res => {
         console.log(res);
+        this.props.updateUserName(this.state.username)
         this.setState({
           username: '',
           password: '',
@@ -42,7 +43,7 @@ class Login extends Component {
 
     if (this.state.loggedIn) {
       return (
-          <Redirect to="/About"/>
+          <Redirect push to="/"/>
         )
     }
 
@@ -73,6 +74,9 @@ class Login extends Component {
               Log in
             </Button>
           </FormItem>
+          
+            
+          
         </Form>
       </Content>
     );

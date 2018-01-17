@@ -1,4 +1,5 @@
 import React from "react";
+import {Redirect} from 'react-router-dom'
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
@@ -6,10 +7,11 @@ import Col from "../components/Col";
 
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-export default class Example extends React.Component {
-  render() {
+const Checkout = (props) =>{
+  if (props.isLoggedIn) {
+
     return (
-      <div className="container col-md-6">
+ <div className="container col-md-6">
       <Form>
         <FormGroup>
           <Label for="exampleEmail">*Name</Label>
@@ -43,6 +45,12 @@ export default class Example extends React.Component {
         <Button>Submit</Button>
       </Form>
       </div>
-    );
+
+)
+  } else {
+    alert('You need to be logged in!');
+    return (<Redirect to='/build' />)
   }
 }
+  
+export default Checkout;
