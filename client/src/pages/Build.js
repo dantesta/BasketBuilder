@@ -119,7 +119,7 @@ class Build extends Component {
 
 
 
-        <button type="button" className={window.location.pathname === "/checkout" ? "active" : ""}>
+        <button type="button" className="btn btn-default">
           <Link to="/checkout">Checkout</Link>
         </button>
 

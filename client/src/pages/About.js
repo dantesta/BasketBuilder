@@ -15,9 +15,19 @@ const About = () =>
       <Row>
         <Col size="md-12">
           <h3>
-            Our Overall Application's Concept
+            What is Basket Builder?
           </h3>
           <p>
+          Basket Builder is a website that allows you to build a gift basket from scratch. 
+          You can choose between 3 baskets and multiples different items to fill the basket with. 
+          One the best features of the website is that the basket and the items are automatically placed in your cart. 
+          In order to checkout you need to create an account, pay, and that's it. 
+          Create a unique basket with dozens of customization options.
+          </p>
+          <h3>
+           About Us
+          </h3>
+            <p>
             The idea is to build a website where you can create your own gift basket. 
             The site will prompt you through a series of steps that allow you to choose a container 
             and the items inside of it. 
@@ -26,12 +36,8 @@ const About = () =>
             We plan to use either mongo or MySQL to store this data. 
             Users can also choose from an assortment of pre-built baskets that can be purchased without 
             having to create an account. The goal behind this idea is to make a functional e-commerce website 
-            using all the concepts we have learned thus far.
-          </p>
-          <h3>
-           Our Motivation for this Project
-          </h3>
-            <p>
+            using all the concepts we have learned thus far. 
+
            Our motivation is not necassarily create something that does not already exist rather to challenge 
            ourselves with a concept that has many real world applications that will help us 
            with our future careers. As far as how we are going to split the work, we have yet to 

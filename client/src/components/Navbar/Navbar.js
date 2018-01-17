@@ -33,6 +33,7 @@ const Navbar = props => {
             <Link to="/build">Build</Link>
           </li>
 
+
           {props.isLoggedIn ? (
             <li >
              <a onClick={props.logout}> Logout</a>
@@ -70,3 +71,5 @@ const Navbar = props => {
   
 
 export default Navbar;
+
+

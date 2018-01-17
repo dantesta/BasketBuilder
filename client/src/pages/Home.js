@@ -12,11 +12,7 @@ const Home = () =>
       <h2>Gift Baskets & More!</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
-      <Row>
-        <Col size="md-12">
-          <h1>Welcome To Basket Builder!</h1>
-        </Col>
-      </Row>
+
       <Row>
         <Col size="md-12">
           <p>
