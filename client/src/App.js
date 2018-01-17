@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Build from "./pages/Build";
 import About from "./pages/About";
@@ -48,7 +48,9 @@ class App extends Component {
       .then(res => {
         if (res.data === false) {
           this.setState({
-            successfulLogout: true
+            successfulLogout: true,
+            isLoggedIn: false,
+            username: ''
           });
           console.log(res.data)
         }
@@ -58,22 +60,35 @@ class App extends Component {
       });
   }
 
+  updateUserName = (username) => {
+    this.setState({
+      username: username,
+      isLoggedIn: true
+    })
+  }
+
  render() {
+  console.log('hi')
   return (
+
      <Router>
-    <div>
+     <div>
       <Navbar username={this.state.username} isLoggedIn={this.state.isLoggedIn} logout={this.userLogout} />
+
       <Wrapper>
+        <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/build" component={Build} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" render={() => <Login updateUserName={this.updateUserName}/>} />
         <Route exact path="/register" component={Register} />
-        <Route exact path="/checkout" render={<Checkout isLoggedIn={this.state.isLoggedIn}/>} />
+        <Route exact path="/checkout" render={() => <Checkout isLoggedIn={this.state.isLoggedIn}/>} />
+        </Switch>
       </Wrapper>
       <Footer />
-    </div>
+      </div>
   </Router>
+
   )
  }
 }

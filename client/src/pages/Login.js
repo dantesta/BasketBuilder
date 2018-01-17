@@ -26,6 +26,7 @@ class Login extends Component {
     API.login({ username: this.state.username, password: this.state.password })
       .then(res => {
         console.log(res);
+        this.props.updateUserName(this.state.username)
         this.setState({
           username: '',
           password: '',
@@ -42,7 +43,7 @@ class Login extends Component {
 
     if (this.state.loggedIn) {
       return (
-          <Redirect to="/Build"/>
+          <Redirect push to="/"/>
         )
     }
 
@@ -71,10 +72,6 @@ class Login extends Component {
           <FormItem>
             <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
               Log in
-            </Button>
-
-            <Button type="warning" htmlType="submit" className="logout-form-button" onClick={this.handleFormSubmit}>
-              Log Out
             </Button>
           </FormItem>
           
