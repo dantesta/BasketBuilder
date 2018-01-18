@@ -49,6 +49,11 @@ class Login extends Component {
 
     return (
       <Content style={{ margin: '0 16px' }}>
+      <div className="container">
+          <h3>
+            Login
+          </h3>
+
         <Form className="login-form col-md-6">
           <FormItem>
             <Input
@@ -78,6 +83,7 @@ class Login extends Component {
             
           
         </Form>
+              </div>
       </Content>
     );
   }

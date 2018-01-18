@@ -3,30 +3,18 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 
 const Home = () =>
   <div>
     <Hero backgroundImage="http://www.jillstable.ca/wp-content/uploads/gift-banner.jpg">
       <h1>Basket Builder</h1>
-      <h2>Gift Baskets & More!</h2>
+      <h2>Create Your Own Gift Basket!</h2>
+       <h3><Link to="/build">Start Building</Link></h3>
     </Hero>
-    <Container style={{ marginTop: 30 }}>
-
-      <Row>
-        <Col size="md-12">
-          <p>
-            Create a new basket (Build Route Link)
-          </p>
-          <p>
-            Learn More (About Route Link)
-          </p>
-          <p>
-           Login (Login Route Link)
-          </p>
-        </Col>
-      </Row>
-    </Container>
+    <Footer />
 
   </div>;
 

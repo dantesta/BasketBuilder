@@ -7,7 +7,6 @@ import Login from "./pages/Login";
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import API from './utils/API';
 import "antd/dist/antd.css"
@@ -86,7 +85,7 @@ class App extends Component {
         <Route exact path="/checkout" render={() => <Checkout isLoggedIn={this.state.isLoggedIn}/>} />
         </Switch>
       </Wrapper>
-      <Footer />
+
       </div>
   </Router>
 

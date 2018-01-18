@@ -15,17 +15,17 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class Build extends Component {
   state = {
     baskets: [
-      {name: 'basket1', img: basketImg1, price: '$10.99'},
-      {name: 'basket2', img: basketImg2, price: '$12.99'},
-      {name: 'basket3', img: basketImg3, price: '$11.99'}
+      {name: 'basket1', img: basketImg1, desc: 'Side Handles', price: '$10.99'},
+      {name: 'basket2', img: basketImg2, desc: 'Looping Handle', price: '$12.99'},
+      {name: 'basket3', img: basketImg3, desc: 'Boat Shaped', price: '$11.99'}
     ],
     items: [
-    {name: 'item1', img: itemImg1, price: '$5.99'},
-    {name: 'item2', img: itemImg2, price: '$3.99'},
-    {name: 'item3', img: itemImg3, price: '$8.99'},
-    {name: 'item4', img: itemImg4, price: '$7.99'},
-    {name: 'item5', img: itemImg5, price: '$5.99'},
-    {name: 'item6', img: itemImg6, price: '$5.99'},
+    {name: 'item1', img: itemImg1, desc: 'Box of Chocolate', price: '$5.99'},
+    {name: 'item2', img: itemImg2, desc: 'Summer Sausage', price: '$3.99'},
+    {name: 'item3', img: itemImg3, desc: 'Coffee Candy', price: '$8.99'},
+    {name: 'item4', img: itemImg4, desc: 'Guiness Chips', price: '$7.99'},
+    {name: 'item5', img: itemImg5, desc: 'Caramel Popcorn', price: '$5.99'},
+    {name: 'item6', img: itemImg6, desc: 'Beef Jerky', price: '$5.99'},
     ],
     pickedBasket: {},
     itemsPicked: [],
@@ -44,7 +44,7 @@ class Build extends Component {
 
   
 
-  basketClick = (imagePath, price) => {
+  basketClick = (imagePath, desc, price) => {
     console.log(imagePath)
     const pickedBasket = this.state.baskets.filter(basket => {
       return basket.img === imagePath
@@ -57,7 +57,7 @@ class Build extends Component {
     })
   }
 
-  itemClick = (imagePath, price) => {
+  itemClick = (imagePath, desc, price) => {
     console.log(imagePath)
     const currentItems = this.state.itemsPicked
     const pickedItem = this.state.items.filter(item => {
@@ -72,7 +72,7 @@ class Build extends Component {
     })
   }
 
-  removeItem = (imagePath, price) => {
+  removeItem = (imagePath, desc, price) => {
     const currentItems = this.state.itemsPicked.filter(item => {
       return item.img !== imagePath
     })
@@ -98,7 +98,7 @@ class Build extends Component {
               <div className="col-md-12">
                 <h1 className="text-center">Select Container</h1>
                 {this.state.baskets ? this.state.baskets.map(basket => 
-                    <Card image={basket.img} price={basket.price} onClick={this.basketClick}/>
+                    <Card image={basket.img} desc={basket.desc} price={basket.price} onClick={this.basketClick}/>
 
                   ) : 'No Baskets to Show'} 
               </div>
@@ -107,7 +107,7 @@ class Build extends Component {
               <div className="col-md-12">
                 <h1 className=" text-center">Select Item</h1>
                 {this.state.items.map(item => 
-                    <Card image={item.img} price={item.price} onClick={this.itemClick}/>
+                    <Card image={item.img} desc={item.desc} price={item.price} onClick={this.itemClick}/>
                   )
                 }
               </div>
@@ -119,15 +119,15 @@ class Build extends Component {
             <h1 className=" text-center">Your Cart</h1>
 
 
-            {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img} price={this.state.pickedBasket.price}/> : (<h4>Your cart is empty</h4>)}
+            {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img} desc={this.state.pickedBasket.desc} price={this.state.pickedBasket.price}/> : (<h4>Your cart is empty</h4>)}
 
             {this.state.isItemPicked ? (
               <div>
               {this.state.itemsPicked.map(item => 
-                <Card image={item.img} price={item.price} onClick={this.removeItem} />
+                <Card image={item.img} desc={item.desc} price={item.price} onClick={this.removeItem} />
                 )}
               </div>)
-             : (<p>Your basket is currently empty</p>)} 
+             : (<p>Your basket is currently empty</p>)} <h5>Total:</h5>
           </div>
 
 
