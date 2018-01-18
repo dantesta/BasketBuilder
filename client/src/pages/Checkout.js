@@ -8,6 +8,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const Checkout = (props) =>{
   if (props.isLoggedIn) {
+    
 
     return (
  <div className="container col-md-6">
@@ -47,8 +48,8 @@ const Checkout = (props) =>{
 
 )
   } else {
-    alert('You need to be logged in!');
-    return (<Redirect to='/build' />)
+    return ('You need to be logged in!');
+   
 
   }
 }

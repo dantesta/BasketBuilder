@@ -12,7 +12,8 @@ class Register extends Component {
   state = {
     username: '',
     password: '',
-    registered: false
+    registered: false,
+    
   };
 
   handleInputChange = event => {

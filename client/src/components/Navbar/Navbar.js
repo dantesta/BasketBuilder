@@ -10,13 +10,16 @@ const Navbar = props => {
     <nav className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
+        <h5>Welcome {props.username ? props.username : ''}</h5>
           <Link className="navbar-brand" to="/">
             Basket Builder
           </Link>
+
         </div>
 
-        Hello, {props.username ? props.username : 'user'}
+        
         <ul className="nav navbar-nav">
+
           <li
             className={
               window.location.pathname === "/" ||
