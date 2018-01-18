@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import basketImg1 from './images/basketImg1.jpg'
 import basketImg2 from './images/basketImg2.jpg'
 import basketImg3 from './images/basketImg3.jpg'
@@ -10,6 +11,8 @@ import itemImg3 from './images/itemImg3.jpg'
 import itemImg4 from './images/itemImg4.jpg'
 import itemImg5 from './images/itemImg5.jpg'
 import itemImg6 from './images/itemImg6.jpg'
+import itemImg7 from './images/itemImg7.jpg'
+import itemImg8 from './images/itemImg8.jpg'
 import Checkout from './Checkout'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class Build extends Component {
@@ -26,6 +29,8 @@ class Build extends Component {
     {name: 'item4', img: itemImg4, desc: 'Guiness Chips', price: '$7.99'},
     {name: 'item5', img: itemImg5, desc: 'Caramel Popcorn', price: '$5.99'},
     {name: 'item6', img: itemImg6, desc: 'Beef Jerky', price: '$5.99'},
+    {name: 'item7', img: itemImg7, desc: 'Pistachios', price: '$4.99'},
+    {name: 'item8', img: itemImg8, desc: 'Toffee', price: '$5.99'}
     ],
     pickedBasket: {},
     itemsPicked: [],
@@ -91,6 +96,7 @@ class Build extends Component {
 
   render() {
     return (
+      <div>
       <div className="container">
         <div className="row">
           <div className="col-md-6 text-center">
@@ -145,7 +151,8 @@ class Build extends Component {
 
 
         </div>
-
+        </div>
+        <Footer />
       </div>
 
 

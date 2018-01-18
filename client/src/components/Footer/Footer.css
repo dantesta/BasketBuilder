@@ -1,6 +1,6 @@
 .footer {
 
-  background: #f2f2f2;
+  background: white;
   position: relative;
 
 }
@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   padding: 4px;
-  background: #f2f2f2;
+  background: white;
   width: 100%;
   color: black;
   text-align: center;

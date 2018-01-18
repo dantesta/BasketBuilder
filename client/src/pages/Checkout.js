@@ -1,5 +1,6 @@
 import React from "react";
 import {Redirect} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
@@ -42,7 +43,7 @@ const Checkout = (props) =>{
           <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
 
-        <Button>Confirm Order</Button>
+        <Button><Link to="/">Confirm Order</Link></Button>
       </Form>
       </div>
 
