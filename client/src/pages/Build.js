@@ -122,7 +122,7 @@ class Build extends Component {
 
           <div className="col-md-6 text-center">
 
-            <h1 className=" text-center">Your Cart</h1>
+            <h1 className="text-center">Your Cart</h1>
 
 
             {this.state.isBasketPicked ? <Card image={this.state.pickedBasket.img} desc={this.state.pickedBasket.desc} price={this.state.pickedBasket.price}/> : (<h4>Your cart is empty</h4>)}
@@ -133,7 +133,7 @@ class Build extends Component {
                 <Card image={item.img} desc={item.desc} price={item.price} onClick={this.removeItem} />
                 )}
               </div>)
-             : (<p>Your basket is currently empty</p>)} <h5>Total:</h5><Button onClick={this._onButtonClick}>Checkout</Button>
+             : (<p>Your basket is currently empty</p>)} <h5 className="text-center" style={{marginTop: 30}}>Total:</h5><Button onClick={this._onButtonClick}>Checkout</Button>
           </div>
 
 
