@@ -4,11 +4,11 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const Checkout = (props) =>{
   if (props.isLoggedIn) {
+    
 
     return (
  <div className="container col-md-6">
@@ -42,14 +42,15 @@ const Checkout = (props) =>{
           <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
 
-        <Button>Submit</Button>
+        <Button>Confirm Order</Button>
       </Form>
       </div>
 
 )
   } else {
-    alert('You need to be logged in!');
-    return (<Redirect to='/build' />)
+    return ('You need to be logged in!');
+   
+
   }
 }
   

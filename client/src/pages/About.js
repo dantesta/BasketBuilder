@@ -24,26 +24,6 @@ const About = () =>
           In order to checkout you need to create an account, pay, and that's it. 
           Create a unique basket with dozens of customization options.
           </p>
-          <h3>
-           About Us
-          </h3>
-            <p>
-            The idea is to build a website where you can create your own gift basket. 
-            The site will prompt you through a series of steps that allow you to choose a container 
-            and the items inside of it. 
-            After each item is chosen, it will be added to the cart that will update with each new item added. 
-            In order to create a basket you will need to create an account and login. 
-            We plan to use either mongo or MySQL to store this data. 
-            Users can also choose from an assortment of pre-built baskets that can be purchased without 
-            having to create an account. The goal behind this idea is to make a functional e-commerce website 
-            using all the concepts we have learned thus far. 
-
-           Our motivation is not necassarily create something that does not already exist rather to challenge 
-           ourselves with a concept that has many real world applications that will help us 
-           with our future careers. As far as how we are going to split the work, we have yet to 
-           decide who will be working on what. We will likely follow the same route we took for project 2 
-           and allow everyone to work on their areas of strength.
-          </p>
 
         </Col>
       </Row>

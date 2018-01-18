@@ -12,7 +12,8 @@ class Register extends Component {
   state = {
     username: '',
     password: '',
-    registered: false
+    registered: false,
+    
   };
 
   handleInputChange = event => {
@@ -74,7 +75,10 @@ class Register extends Component {
             />
           </FormItem>
           <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
+
+            <Button type="success" htmlType="submit" className="login-form-button" onClick={this.handleFormSubmit}>
+
+
               Register
             </Button>
           </FormItem>

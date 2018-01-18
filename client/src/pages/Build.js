@@ -10,7 +10,8 @@ import itemImg3 from './images/itemImg3.jpg'
 import itemImg4 from './images/itemImg4.jpg'
 import itemImg5 from './images/itemImg5.jpg'
 import itemImg6 from './images/itemImg6.jpg'
-
+import Checkout from './Checkout'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class Build extends Component {
   state = {
     baskets: [
@@ -29,8 +30,19 @@ class Build extends Component {
     pickedBasket: {},
     itemsPicked: [],
     isBasketPicked: false,
-    isItemPicked: false
+    isItemPicked: false,
+    showComponent: false,
   };
+
+  
+
+  _onButtonClick = () => {
+    this.setState({
+      showComponent: true,
+    });
+  }
+
+  
 
   basketClick = (imagePath) => {
     console.log(imagePath)
@@ -75,6 +87,8 @@ class Build extends Component {
 
 
 
+
+
   render() {
     return (
       <div className="container">
@@ -83,9 +97,9 @@ class Build extends Component {
             <div className="row">
               <div className="col-md-12">
                 <h1 className="text-center">Select Container</h1>
-                {this.state.baskets.map(basket => 
+                {this.state.baskets ? this.state.baskets.map(basket => 
                     <Card image={basket.img} onClick={this.basketClick}/>
-                  )}
+                  ) : 'No Baskets to Show'} 
               </div>
             </div>
             <div className="row">
@@ -119,9 +133,13 @@ class Build extends Component {
 
 
 
-        <button type="button" className="btn btn-default">
-          <Link to="/checkout">Checkout</Link>
-        </button>
+        <Button onClick={this._onButtonClick}>Checkout</Button>
+        {this.state.showComponent ?
+           <Checkout isLoggedIn={this.props.isLoggedIn}/> :
+           ''
+        }
+
+
 
 
 
@@ -129,9 +147,16 @@ class Build extends Component {
 
       </div>
 
+
+
     );
   }
+
+  
+
 }
 
 export default Build;
+
+
 

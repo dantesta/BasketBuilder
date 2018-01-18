@@ -10,13 +10,17 @@ const Navbar = props => {
     <nav className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
+
           <Link className="navbar-brand" to="/">
             Basket Builder
           </Link>
+          <h5>Welcome {props.username ? props.username : ''}</h5>
+
         </div>
 
-        Hello, {props.username ? props.username : 'user'}
+        
         <ul className="nav navbar-nav">
+
           <li
             className={
               window.location.pathname === "/" ||
@@ -32,6 +36,7 @@ const Navbar = props => {
           <li className={window.location.pathname === "/build" ? "active" : ""}>
             <Link to="/build">Build</Link>
           </li>
+
 
           {props.isLoggedIn ? (
             <li >

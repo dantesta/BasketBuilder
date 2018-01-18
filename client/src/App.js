@@ -1,4 +1,3 @@
-
 import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
@@ -17,7 +16,8 @@ class App extends Component {
   state = {
     isLoggedIn: false,
     successfulLogout: false,
-    username: ''
+    username: '',
+
   };
 
     componentDidMount() {
@@ -80,7 +80,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/build" component={Build} />
+        <Route exact path="/build" render={() => <Build isLoggedIn={this.state.isLoggedIn}/>} />
         <Route exact path="/login" render={() => <Login updateUserName={this.updateUserName}/>} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/checkout" render={() => <Checkout isLoggedIn={this.state.isLoggedIn}/>} />
@@ -93,4 +93,5 @@ class App extends Component {
   )
  }
 }
+
 export default App;
