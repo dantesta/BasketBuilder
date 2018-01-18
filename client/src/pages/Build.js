@@ -26,7 +26,7 @@ class Build extends Component {
     {name: 'item1', img: itemImg1, desc: 'Box of Chocolate', price: '$5.99'},
     {name: 'item2', img: itemImg2, desc: 'Summer Sausage', price: '$3.99'},
     {name: 'item3', img: itemImg3, desc: 'Coffee Candy', price: '$8.99'},
-    {name: 'item4', img: itemImg4, desc: 'Guiness Chips', price: '$7.99'},
+    {name: 'item4', img: itemImg4, desc: 'Guinness Chips', price: '$7.99'},
     {name: 'item5', img: itemImg5, desc: 'Caramel Popcorn', price: '$5.99'},
     {name: 'item6', img: itemImg6, desc: 'Beef Jerky', price: '$5.99'},
     {name: 'item7', img: itemImg7, desc: 'Pistachios', price: '$4.99'},
@@ -102,7 +102,7 @@ class Build extends Component {
           <div className="col-md-6 text-center">
             <div className="row">
               <div className="col-md-12">
-                <h1 className="text-center">Select Container</h1>
+                <h1 className="text-center">Select A Basket</h1>
                 {this.state.baskets ? this.state.baskets.map(basket => 
                     <Card image={basket.img} desc={basket.desc} price={basket.price} onClick={this.basketClick}/>
 
@@ -111,7 +111,7 @@ class Build extends Component {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <h1 className=" text-center">Select Item</h1>
+                <h1 className=" text-center" style={{marginTop: 50}}>Select Items</h1>
                 {this.state.items.map(item => 
                     <Card image={item.img} desc={item.desc} price={item.price} onClick={this.itemClick}/>
                   )
@@ -133,14 +133,14 @@ class Build extends Component {
                 <Card image={item.img} desc={item.desc} price={item.price} onClick={this.removeItem} />
                 )}
               </div>)
-             : (<p>Your basket is currently empty</p>)} <h5>Total:</h5>
+             : (<p>Your basket is currently empty</p>)} <h5>Total:</h5><Button onClick={this._onButtonClick}>Checkout</Button>
           </div>
 
 
 
 
 
-        <Button onClick={this._onButtonClick}>Checkout</Button>
+        
         {this.state.showComponent ?
            <Checkout isLoggedIn={this.props.isLoggedIn}/> :
            ''

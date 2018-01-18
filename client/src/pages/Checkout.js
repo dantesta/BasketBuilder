@@ -14,7 +14,7 @@ const Checkout = (props) =>{
     return (
  <div className="container col-md-6">
       <Form>
-        <FormGroup>
+        <FormGroup style= {{marginTop: 50}}>
           <Label for="exampleEmail">*Name</Label>
           <Input type="email" name="email" id="exampleEmail" placeholder="John Smith" />
         </FormGroup>

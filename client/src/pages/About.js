@@ -21,7 +21,8 @@ const About = () =>
           <p>
           Basket Builder is a website that allows you to build a gift basket from scratch. 
           You can choose between 3 baskets and multiples different items to fill the basket with. 
-          One the best features of the website is that the basket and the items are automatically placed in your cart. 
+          One the best features of the website is that the basket and the items are automatically placed in your cart.
+          </p><p> 
           In order to checkout you need to create an account, pay, and that's it. 
           Create a unique basket with dozens of customization options. Click Build on the navbar to get started!
           </p>
